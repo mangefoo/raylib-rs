@@ -51,19 +51,19 @@ impl RaylibHandle {
         return match (c_vs_code, c_fs_code) {
             (Some(vs), Some(fs)) => unsafe {
                 Shader(ffi::LoadShaderCode(
-                    vs.as_ptr() as *mut i8,
-                    fs.as_ptr() as *mut i8,
+                    vs.as_ptr() as *mut u8,
+                    fs.as_ptr() as *mut u8,
                 ))
             },
             (None, Some(fs)) => unsafe {
                 Shader(ffi::LoadShaderCode(
                     std::ptr::null_mut(),
-                    fs.as_ptr() as *mut i8,
+                    fs.as_ptr() as *mut u8,
                 ))
             },
             (Some(vs), None) => unsafe {
                 Shader(ffi::LoadShaderCode(
-                    vs.as_ptr() as *mut i8,
+                    vs.as_ptr() as *mut u8,
                     std::ptr::null_mut(),
                 ))
             },
