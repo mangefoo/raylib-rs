@@ -171,11 +171,13 @@ fn link(platform: Platform, platform_os: PlatformOS) {
         }
         PlatformOS::Linux => {
             println!("cargo:rustc-link-search=/usr/local/lib");
-            println!("cargo:rustc-link-search=/opt/vc/lib");
-            println!("cargo:rustc-link-lib=SDL2-2.0");
-            println!("cargo:rustc-link-lib=GLESv2");
-            println!("cargo:rustc-link-lib=EGL");
-            println!("cargo:rustc-link-lib=bcm_host");
+            println!("cargo:rustc-link-lib=gbm");
+            println!("cargo:rustc-link-lib=drm");
+//            println!("cargo:rustc-link-search=/opt/vc/lib");
+//             println!("cargo:rustc-link-lib=SDL2-2.0");
+//             println!("cargo:rustc-link-lib=GLESv2");
+//             println!("cargo:rustc-link-lib=EGL");
+//             println!("cargo:rustc-link-lib=bcm_host");
         }
         PlatformOS::OSX => {
             println!("cargo:rustc-link-search=native=/usr/local/lib");
