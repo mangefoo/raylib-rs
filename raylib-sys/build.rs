@@ -64,12 +64,13 @@ fn build_with_cmake(src_path: &str) {
         .define("SUPPORT_BUSY_WAIT_LOOP", "OFF")
         .define("STATIC", "TRUE");
 
-    match platform {
-        Platform::Desktop => conf.define("PLATFORM", "Desktop"),
-        Platform::Web => conf.define("PLATFORM", "Web"),
-        Platform::RPI => conf.define("PLATFORM", "Raspberry Pi"),
-    };
+#    match platform {
+#        Platform::Desktop => conf.define("PLATFORM", "Desktop"),
+#        Platform::Web => conf.define("PLATFORM", "Web"),
+#        Platform::RPI => conf.define("PLATFORM", "Raspberry Pi"),
+#    };
 
+    conf.define("PLATFORM", "DRM")
     let dst = conf.build();
     let dst_lib = join_cmake_lib_directory(dst);
     // on windows copy the static library to the proper file name
