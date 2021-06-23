@@ -172,7 +172,8 @@ fn link(platform: Platform, platform_os: PlatformOS) {
         }
         PlatformOS::Linux => {
             println!("cargo:rustc-link-search=/usr/local/lib");
-            println!("cargo:rustc-link-lib=X11");
+            println!("cargo:rustc-link-lib=SDL");
+            println!("cargo:rustc-link-lib=GL");
         }
         PlatformOS::OSX => {
             println!("cargo:rustc-link-search=native=/usr/local/lib");
