@@ -170,7 +170,7 @@ fn link(platform: Platform, platform_os: PlatformOS) {
         }
         PlatformOS::Linux => {
             println!("cargo:rustc-link-search=/usr/local/lib");
-            println!("cargo:rustc-link-lib=GLESv2");
+            println!("cargo:rustc-link-lib=SDL2");
         }
         PlatformOS::OSX => {
             println!("cargo:rustc-link-search=native=/usr/local/lib");
