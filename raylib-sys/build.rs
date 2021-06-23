@@ -70,7 +70,7 @@ fn build_with_cmake(src_path: &str) {
         Platform::RPI => conf.define("PLATFORM", "Raspberry Pi"),
     };
 */
-    conf.define("PLATFORM", "DRM")
+    conf.define("PLATFORM", "DRM");
     let dst = conf.build();
     let dst_lib = join_cmake_lib_directory(dst);
     // on windows copy the static library to the proper file name
