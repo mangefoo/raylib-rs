@@ -71,7 +71,8 @@ fn build_with_cmake(src_path: &str) {
     };
 */
     conf.define("PLATFORM", "DRM");
-    conf.define("CMAKE_CXX_FLAGS", "-DDEFAULT_GRAPHIC_DRIVER_DRM=/dev/dri/card0");
+    conf.define("DEFAULT_GRAPHIC_DEVICE_DRM", "/dev/dri/card0");
+    conf.define("CMAKE_CXX_FLAGS", "-DDEFAULT_GRAPHIC_DEVICE_DRM=/dev/dri/card0");
     let dst = conf.build();
     let dst_lib = join_cmake_lib_directory(dst);
     // on windows copy the static library to the proper file name
