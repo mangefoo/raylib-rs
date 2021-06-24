@@ -62,7 +62,8 @@ fn build_with_cmake(src_path: &str) {
         .define("CMAKE_BUILD_TYPE", "Release")
         // turn off until this is fixed
         .define("SUPPORT_BUSY_WAIT_LOOP", "OFF")
-        .define("STATIC", "TRUE");
+        .define("STATIC", "TRUE")
+        .define("DEFAULT_GRAPHIC_DEVICE_DRM", "/dev/dri/card0");
 
     /*    match platform {
         Platform::Desktop => conf.define("PLATFORM", "Desktop"),
