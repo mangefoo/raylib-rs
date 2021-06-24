@@ -62,8 +62,7 @@ fn build_with_cmake(src_path: &str) {
         .define("CMAKE_BUILD_TYPE", "Release")
         // turn off until this is fixed
         .define("SUPPORT_BUSY_WAIT_LOOP", "OFF")
-        .define("STATIC", "TRUE")
-        .define("DEFAULT_GRAPHIC_DEVICE_DRM", "/dev/dri/card0");
+        .define("STATIC", "TRUE");
 
     /*    match platform {
         Platform::Desktop => conf.define("PLATFORM", "Desktop"),
@@ -72,6 +71,7 @@ fn build_with_cmake(src_path: &str) {
     };
 */
     conf.define("PLATFORM", "DRM");
+    conf.define("DEFAULT_GRAPHIC_DRIVER_DRM", "/dev/dri/card0");
     let dst = conf.build();
     let dst_lib = join_cmake_lib_directory(dst);
     // on windows copy the static library to the proper file name
