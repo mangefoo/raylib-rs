@@ -1,0 +1,4 @@
+[submodule "raylib-sys/raylib"]
+	path = raylib-sys/raylib
+	url = https://github.com/mangefoo/raylib
+	branch = v3.5.0
